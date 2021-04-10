@@ -56,7 +56,7 @@
                                         <td>{{ $user->nric }}</td>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->panel_id }}</td>
-                                        <td><button class="btn btn-rounded btn-success">FINISH</button> <button class="btn btn-rounded btn-danger">DELETE</button></td>
+                                        <td><button class="btn btn-rounded btn-success"><a href="/appointment/queue/{{ $user->id }}/finish">FINISH</a> </button> <button class="btn btn-rounded btn-danger">DELETE</button></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

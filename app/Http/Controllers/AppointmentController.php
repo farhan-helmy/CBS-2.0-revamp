@@ -58,11 +58,38 @@ class AppointmentController extends Controller
                         '<td>' . $user->id . '</td>' .
                         '<td>' . $user->name . '</td>' .
                         '<td>' . $user->nric . '</td>' .
-                        '<td> <button class="btn btn-rounded btn-primary"> <a href="/appointment/sets/'. $user->id .'">..</a>SET</button></td>' .
+                        '<td> <button class="btn btn-rounded btn-primary"> <a href="/appointment/sets/' . $user->id . '">..</a>SET</button></td>' .
                         '</tr>';
                 }
                 return Response($output);
             }
         }
+    }
+
+    public function finishQueue(User $user)
+    {
+        return view('appointment.finish', compact('user'));
+    }
+
+    public function saveFinish(Request $request)
+    {
+        $time_now = Carbon::now();
+        $appointment = Appointment::where('user_id', '=', $request->user_id)->first();
+
+        $appointment->complaints = $request->complaint;
+        $appointment->medication = $request->medication;
+        $appointment->treatment_fee = $request->treatment_fee;
+        $appointment->resit_no = $request->resit_no;
+        $appointment->treatment = $request->treatment;
+        $appointment->date_time = $time_now;
+        $appointment->save();
+
+        $user = User::where('id', '=', $request->user_id)->first();
+        $user->status = 'done';
+        $user->save();
+
+        //dd($appointment);
+        return redirect()->route('dashboard.index')
+            ->with('success', 'Patients records saved successfully.');
     }
 }
