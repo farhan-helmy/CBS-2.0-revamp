@@ -4,7 +4,7 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item  {{request()->routeIs('dashboard') ? 'selected' : ''}}"> <a class="sidebar-link  {{request()->routeIs('dashboard') ? 'active' : ''}}" href="{{route('dashboard')}}" aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a></li>
+                <li class="sidebar-item  {{request()->routeIs('dashboard.*') ? 'selected' : ''}}"> <a class="sidebar-link  {{request()->routeIs('dashboard.index') ? 'active' : ''}}" href="{{route('dashboard.index')}}" aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a></li>
                 <li class="sidebar-item  {{request()->routeIs('appointment.*') ? 'selected' : ''}}"> <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span class="hide-menu">Appointment</span></a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
                         <li class="sidebar-item"><a href="{{route('appointment.set')}}" class="sidebar-link"><span class="hide-menu"> Set
