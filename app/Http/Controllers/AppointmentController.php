@@ -61,7 +61,7 @@ class AppointmentController extends Controller
                         '<td> <button class="btn btn-rounded btn-primary"> <a href="/appointment/sets/' . $user->id . '">..</a>SET</button></td>' .
                         '</tr>';
                 }
-                return Response($output);
+                return response($output);
             }
         }
     }
