@@ -112,6 +112,18 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label class="col-md-2 text-right">Panel</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="panel_id">
+                                            @foreach($panels as $panel)          
+                                                <option value="{{$panel->id}}">{{$panel->company_name}}</option>             
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-rounded btn-primary">SUBMIT</button>

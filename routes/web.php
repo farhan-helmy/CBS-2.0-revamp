@@ -39,12 +39,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('add', [PatientController::class, 'index'])->name('index');
         Route::get('records', [PatientController::class, 'records'])->name('records');
         Route::post('add', [PatientController::class, 'savePatient'])->name('add');
+        Route::get('show/{user}', [PatientController::class, 'show'])->name('show');
     });
 
     Route::prefix('panel')->name('panel.')->group(function () {
         Route::get('', [PanelController::class, 'index'])->name('index');
         Route::post('store', [PanelController::class, 'store'])->name('store');
         Route::get('records', [PanelController::class, 'records'])->name('records');
+        
 
     });
 
