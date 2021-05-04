@@ -9,7 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
+       $usercount = User::role('patient')->count();
 
-       return view('dashboard.index');
+       return view('dashboard.index', compact('usercount'));
     }
 }

@@ -28,17 +28,17 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-hospital"></i><span class="hide-menu">Panel</span></a>
+                <li class="sidebar-item {{request()->routeIs('panel.*') ? 'selected' : ''}}"> <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-hospital"></i><span class="hide-menu">Panel</span></a>
                     <ul aria-expanded="false" class="collapse first-level base-level-line">
-                        <li class="sidebar-item"><a href="form-inputs.html" class="sidebar-link"><span class="hide-menu"> Register
+                        <li class="sidebar-item"><a href="{{route('panel.index')}}" class="sidebar-link"><span class="hide-menu"> Register
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"><a href="form-input-grid.html" class="sidebar-link"><span class="hide-menu"> Records
+                        <li class="sidebar-item"><a href="{{route('panel.records')}}" class="sidebar-link"><span class="hide-menu"> Records
                                 </span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="authentication-login1.html" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span class="hide-menu">Logout</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('logout')}}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span class="hide-menu">Logout</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
