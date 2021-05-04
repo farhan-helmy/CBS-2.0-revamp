@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('queue', [AppointmentController::class, 'queue'])->name('queue');
         Route::get('records', [AppointmentController::class, 'records'])->name('records');
         Route::get('queue/{user}/finish', [AppointmentController::class, 'finishQueue'])->name('finishes');
+        Route::get('show/{user}', [AppointmentController::class, 'show'])->name('show');
         Route::post('finish', [AppointmentController::class, 'saveFinish'])->name('finish');
     });
     

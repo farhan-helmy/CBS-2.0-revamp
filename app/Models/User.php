@@ -28,7 +28,8 @@ class User extends Authenticatable
         'address',
         'next_of_kin',
         'position',
-        'status'
+        'status',
+        'appointment_id'
     ];
 
     /**
@@ -52,11 +53,11 @@ class User extends Authenticatable
 
     public function appointment()
     {
-        $this->belongsTo(Appointment::class);
+        return $this->belongsTo(Appointment::class);
     }
 
     public function panel()
     {
-        $this->hasMany(Panel::class);
+        return $this->hasMany(Panel::class);
     }
 }

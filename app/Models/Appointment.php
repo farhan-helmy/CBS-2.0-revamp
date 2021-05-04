@@ -23,6 +23,6 @@ class Appointment extends Model
 
     public function patient()
     {
-        $this->hasMany(User::class);
+        return $this->hasMany(User::class);
     }
 }

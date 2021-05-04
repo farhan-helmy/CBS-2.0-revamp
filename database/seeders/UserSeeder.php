@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
             'email' => 'staff@gmail.com',
             'nric' => '9754238482',
             'password' => Hash::make('password'),
+            'status' => 'staff'
         ]);
 
         $user->assignRole('staff');

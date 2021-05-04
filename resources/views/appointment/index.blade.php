@@ -37,18 +37,28 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                        <label for="">SEARCH HERE</label>
-                        <input type="text" class="form-controller" id="search" name="search"></input>
-                            <table class="table table-striped table-bordered no-wrap">
+                            <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                 <thead>
                                     <tr>
-                                        <th>Patient ID</th>
+                                        <th>No</th>
                                         <th>Patient Name</th>
                                         <th>NRIC</th>
+                                        <th>Patient ID</th>
+                                        <th>Panel ID</th>
                                         <th>ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->nric }}</td>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->panel_id }}</td>
+                                        <td><a href="{{route('appointment.sets', ['user' => $user->id])}}"><button class="btn btn-rounded btn-danger">SET</button></a></td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

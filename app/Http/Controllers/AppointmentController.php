@@ -12,7 +12,7 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        $users = User::role('patient')->get();
+        $users = User::where('status', '=', NULL)->get();
 
         //dd($users);
         return view('appointment.index', compact('users'));
@@ -27,13 +27,12 @@ class AppointmentController extends Controller
 
     public function records()
     {
-        return view('appointment.records');
+        $users = User::where('status', 'done')->get();
+        return view('appointment.records', compact('users'));
     }
 
     public function set(User $user)
     {
-        $users = User::role('patient')->get();
-
         $user->status = 'queue';
         $time_now = Carbon::now();
         $user->save();
@@ -43,27 +42,6 @@ class AppointmentController extends Controller
         ]);
 
         return view('appointment.index', compact('users'));
-    }
-
-    public function search(Request $request)
-    {
-        if ($request->ajax()) {
-            $output = "";
-            $users = DB::table('users')->where('nric', 'LIKE', '%' . $request->search . "%")->get();
-
-            if ($users) {
-
-                foreach ($users as $key => $user) {
-                    $output .= '<tr>' .
-                        '<td>' . $user->id . '</td>' .
-                        '<td>' . $user->name . '</td>' .
-                        '<td>' . $user->nric . '</td>' .
-                        '<td> <button class="btn btn-rounded btn-primary"> <a href="/appointment/sets/' . $user->id . '">..</a>SET</button></td>' .
-                        '</tr>';
-                }
-                return Response($output);
-            }
-        }
     }
 
     public function finishQueue(User $user)
@@ -86,10 +64,17 @@ class AppointmentController extends Controller
 
         $user = User::where('id', '=', $request->user_id)->first();
         $user->status = 'done';
+        $user->appointment_id = $appointment->id;
         $user->save();
 
         //dd($appointment);
         return redirect()->route('dashboard.index')
             ->with('success', 'Patients records saved successfully.');
+    }
+
+    public function show(User $user)
+    {
+        //dd($user->appointment());
+        return view('appointment.show', compact('user'));
     }
 }
