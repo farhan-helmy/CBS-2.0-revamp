@@ -39,11 +39,12 @@
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>Patient ID</th>
                                         <th>Patient Name</th>
                                         <th>NRIC</th>
                                         <th>Patient ID</th>
                                         <th>Panel ID</th>
+                                        <th>Register Date</th>
                                         <th>ACTION</th>
                                     </tr>
                                 </thead>
@@ -55,20 +56,11 @@
                                         <td>{{ $user->nric }}</td>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->panel_id }}</td>
+                                        <td>{{ $user->created_at }}</td>
                                         <td><a class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('patient.show', ['user' => $user->id])}}" class="btn btn-rounded btn-danger">VIEW</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Patient Name</th>
-                                        <th>NRIC</th>
-                                        <th>Patient ID</th>
-                                        <th>Panel ID</th>
-                                        <th>ACTION</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>

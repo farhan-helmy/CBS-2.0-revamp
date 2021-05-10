@@ -15,7 +15,7 @@ class AccountController extends Controller
 
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('nric', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
@@ -24,7 +24,7 @@ class AccountController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'nric' => 'The provided credentials do not match our records.',
         ]);
     }
 

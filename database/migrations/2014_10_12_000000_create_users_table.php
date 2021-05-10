@@ -19,12 +19,13 @@ class CreateUsersTable extends Migration
            
             $table->string('name');
             $table->bigInteger('nric')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('gender')->nullable();
             $table->bigInteger('phone_no')->nullable();
             $table->string('address')->nullable();
-            $table->bigInteger('next_of_kin')->nullable();
+            $table->bigInteger('next_of_kin_phone_no')->nullable();
             $table->string('position')->nullable();
+            $table->text('next_of_kin')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->string('status')->nullable();

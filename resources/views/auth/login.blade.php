@@ -48,15 +48,15 @@
                             <img src="{{ asset('assets/images/big/icon.png') }}" alt="wrapkit">
                         </div>
                         <h2 class="mt-3 text-center">Sign In</h2>
-                        <p class="text-center">Enter your email address and password to access admin panel.</p>
+                        <p class="text-center">Enter your IC and password to access admin panel.</p>
                         <form class="mt-4" method="POST" action="{{ route('auth') }}">
                             @csrf
                             @method('POST')
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="uname">Email</label>
-                                        <input class="form-control" name="email" type="text" placeholder="enter your email">
+                                        <label class="text-dark" for="uname">IC Number</label>
+                                        <input class="form-control" name="nric" type="text" placeholder="enter your ic number">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

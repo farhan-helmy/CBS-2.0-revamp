@@ -53,10 +53,18 @@
                             @csrf
                             <div class="form-body">
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Panel Name</label>
+                                    <label class="col-md-2 text-right">Panel Company Name</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" name="company_name" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2 text-right">Panel Company Details</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" name="company_details" placeholder="">
                                         </div>
                                     </div>
                                 </div>

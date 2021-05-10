@@ -60,18 +60,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Email</label>
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="email" name="email" placeholder="user@gmail.com">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <label class="col-md-2 text-right">NRIC</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="nric" placeholder="xxxx-xx-xxxx">
+                                            <input type="number" class="form-control" name="nric" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +83,7 @@
                                     <label class="col-md-2 text-right">Phone no.</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="phone_no" placeholder="xxx-xxx xxxx">
+                                            <input type="text" class="form-control" name="phone_no" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -104,10 +96,18 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Next of kin</label>
+                                    <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin" placeholder="xxx-xxx xxxx">
+                                            <input type="number" class="form-control" name="next_of_kin" placeholder="xxxxxxxxxx">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2 text-right">Next of kin details</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" name="details" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -116,9 +116,10 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="panel_id">
-                                            @foreach($panels as $panel)          
-                                                <option value="{{$panel->id}}">{{$panel->company_name}}</option>             
-                                            @endforeach
+                                                <option value="non panel">Non-panel</option>
+                                                @foreach($panels as $panel)
+                                                <option value="{{$panel->id}}">{{$panel->company_name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

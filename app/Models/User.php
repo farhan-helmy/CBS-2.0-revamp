@@ -26,6 +26,7 @@ class User extends Authenticatable
         'gender',
         'phone_no',
         'address',
+        'next_of_kin_phone_no',
         'next_of_kin',
         'position',
         'status',

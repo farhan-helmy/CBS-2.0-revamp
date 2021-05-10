@@ -55,9 +55,10 @@
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Panel Name</th>
-                        
+                                        <th>Panel ID</th>
+                                        <th>Panel Company Name</th>
+                                        <th>Panel Company Details</th>
+                                        <th>Registered At</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -65,6 +66,8 @@
                                     <tr>
                                         <td>{{ $panel->id }}</td>
                                         <td>{{ $panel->company_name }}</td>
+                                        <td>{{ $panel->company_details }}</td>
+                                        <td>{{ $panel->created_at }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

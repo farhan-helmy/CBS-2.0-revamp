@@ -16,6 +16,7 @@ class CreatePanelCompaniesTable extends Migration
         Schema::create('panel_companies', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
+            $table->string('company_details');
             $table->timestamps();
         });
     }

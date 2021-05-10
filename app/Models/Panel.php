@@ -12,7 +12,8 @@ class Panel extends Model
     protected $table = 'panel_companies';
 
     protected $fillable = [
-        'company_name'
+        'company_name',
+        'company_details'
     ];
 
     public function patient()

@@ -39,7 +39,7 @@
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>Appointment ID</th>
                                         <th>Patient Name</th>
                                         <th>NRIC</th>
                                         <th>Patient ID</th>
