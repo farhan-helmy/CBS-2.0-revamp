@@ -41,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('records', [PatientController::class, 'records'])->name('records');
         Route::post('add', [PatientController::class, 'savePatient'])->name('add');
         Route::get('show/{user}', [PatientController::class, 'show'])->name('show');
+        Route::get('edit/{user}', [PatientController::class, 'edit'])->name('edit');
+        Route::put('update/{user}', [PatientController::class, 'update'])->name('update');
     });
 
     Route::prefix('panel')->name('panel.')->group(function () {

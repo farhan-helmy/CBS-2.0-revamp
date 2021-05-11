@@ -39,7 +39,7 @@
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Number</th>
                                         <th>Name</th>
                                         <th>NRIC</th>
                                         <th>Patient ID</th>
@@ -51,7 +51,7 @@
                                 <tbody>
                                     @foreach($users as $user)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $i++ }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->nric }}</td>
                                         <td>{{ $user->id }}</td>

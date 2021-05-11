@@ -17,7 +17,8 @@ class DoctorController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('doctor.index', compact('users'));
+        $i = 1;
+        return view('doctor.index', compact('users','i'));
     }
 
     /**

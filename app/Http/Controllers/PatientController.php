@@ -32,12 +32,29 @@ class PatientController extends Controller
     {
         $users = User::role('patient')->get();
 
-        return view('patients.records', compact('users'));
+        $i = 1;
+
+        return view('patients.records', compact('users', 'i'));
     }
 
     public function show(User $user)
     {
 
         return view('patients.show', compact('user'));
+    }
+
+    public function edit(User $user)
+    {
+
+        $panels = Panel::all();
+        return view('patients.edit', compact('user', 'panels'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $user->update($request->all());
+
+        return redirect()->route('patient.records')
+            ->with('success', 'Patient updated successfully!');
     }
 }
