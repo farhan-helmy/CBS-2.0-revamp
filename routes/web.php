@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PatientController;
@@ -47,6 +48,15 @@ Route::middleware(['auth'])->group(function () {
         Route::post('store', [PanelController::class, 'store'])->name('store');
         Route::get('records', [PanelController::class, 'records'])->name('records');
         
+
+    });
+
+    Route::prefix('doctor')->name('doctor.')->group(function () {
+        Route::get('', [DoctorController::class, 'index'])->name('index');
+        Route::get('show/{user}', [DoctorController::class, 'show'])->name('show');
+        Route::get('destroy/{user}', [DoctorController::class, 'destroy'])->name('destroy');
+        Route::get('edit/{user}', [DoctorController::class, 'edit'])->name('edit');
+        Route::put('update/{user}', [DoctorController::class, 'update'])->name('update');
 
     });
 

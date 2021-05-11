@@ -38,6 +38,9 @@
                         </li>
                     </ul>
                 </li>
+                @role('doctor')
+                <li class="sidebar-item  {{request()->routeIs('doctor.*') ? 'selected' : ''}}"> <a class="sidebar-link  {{request()->routeIs('doctor.index') ? 'active' : ''}}" href="{{route('doctor.index')}}" aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span class="hide-menu">Doctor</span></a></li>
+                @endrole
                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('logout')}}" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span class="hide-menu">Logout</span></a></li>
             </ul>
         </nav>

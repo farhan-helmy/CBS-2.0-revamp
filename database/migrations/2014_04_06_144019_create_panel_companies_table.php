@@ -15,8 +15,8 @@ class CreatePanelCompaniesTable extends Migration
     {
         Schema::create('panel_companies', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
-            $table->string('company_details');
+            $table->string('company_name')->nullable();
+            $table->string('company_details')->nullable();
             $table->timestamps();
         });
     }

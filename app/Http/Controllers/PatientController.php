@@ -16,12 +16,11 @@ class PatientController extends Controller
 
     public function savePatient(Request $request)
     {
-        $request->validate([
-            'nric' => 'required|unique:users'
-        ]);
 
         //dd($request->all());
         $user = User::create($request->all());
+
+        //$user->panel_id = $request->panel_id;
 
         $user->assignRole('patient');
 
@@ -41,5 +40,4 @@ class PatientController extends Controller
 
         return view('patients.show', compact('user'));
     }
-
 }

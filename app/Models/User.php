@@ -30,7 +30,9 @@ class User extends Authenticatable
         'next_of_kin',
         'position',
         'status',
-        'appointment_id'
+        'appointment_id',
+        'password',
+        'panel_id'
     ];
 
     /**
@@ -59,6 +61,6 @@ class User extends Authenticatable
 
     public function panel()
     {
-        return $this->hasMany(Panel::class);
+        return $this->belongsTo(Panel::class);
     }
 }

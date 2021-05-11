@@ -47,15 +47,16 @@
             <div class="mx-auto col-sm-12 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title">Add Patient Here</h1>
-                        <form class="mt-3 form-horizontal" method="POST" action="/patient/add">
+                        <h1 class="card-title">Update Here</h1>
+                        <form class="mt-3 form-horizontal" method="POST" action="{{ route('doctor.update', ['user' => $user->id]) }}">
+                            @method('PUT')
                             @csrf
                             <div class="form-body">
                                 <div class="row">
                                     <label class="col-md-2 text-right">Name</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="">
+                                            <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +64,7 @@
                                     <label class="col-md-2 text-right">NRIC</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="nric" placeholder="xxxxxxxxxx">
+                                            <input type="number" class="form-control" name="nric" value="{{$user->nric}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +73,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="gender">
-                                                <option selected>Choose...</option>
+                                                <option selected>{{$user->gender}}</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
@@ -83,7 +84,7 @@
                                     <label class="col-md-2 text-right">Phone no.</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="phone_no" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="phone_no" value="{{$user->phone_no}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +92,7 @@
                                     <label class="col-md-2 text-right">Address</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <textarea type="text" class="form-control" rows="3" name="address" placeholder=""></textarea>
+                                            <textarea type="text" class="form-control" rows="3" value="{{$user->address}}" name="address" placeholder=""></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +100,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin" placeholder="xxxxxxxxxx">
+                                            <input type="number" class="form-control" name="next_of_kin" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +108,15 @@
                                     <label class="col-md-2 text-right">Next of kin details</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="details" placeholder="">
+                                            <input type="text" class="form-control" id="name" name="details" value="{{$user->next_of_kin}}" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2 text-right">Password</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="password" name="password" value="" placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -116,6 +125,7 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="panel_id">
+                                                <option selected value="{{$user->panel->id}}">{{$user->panel->company_name}}</option>
                                                 @foreach($panels as $panel)
                                                 <option value="{{$panel->id}}">{{$panel->company_name}}</option>
                                                 @endforeach
