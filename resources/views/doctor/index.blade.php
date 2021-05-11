@@ -34,6 +34,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                <a href="{{route('doctor.create')}}" class="btn btn-rounded btn-success">Add new staff</a>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">

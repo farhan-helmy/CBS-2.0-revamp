@@ -59,6 +59,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('destroy/{user}', [DoctorController::class, 'destroy'])->name('destroy');
         Route::get('edit/{user}', [DoctorController::class, 'edit'])->name('edit');
         Route::put('update/{user}', [DoctorController::class, 'update'])->name('update');
+        Route::get('create', [DoctorController::class, 'create'])->name('create');
+        Route::post('store', [DoctorController::class, 'store'])->name('store');
 
     });
 

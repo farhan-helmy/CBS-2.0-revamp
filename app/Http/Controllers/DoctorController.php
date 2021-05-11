@@ -16,9 +16,10 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::role(['doctor', 'staff'])->get();
+      
         $i = 1;
-        return view('doctor.index', compact('users','i'));
+        return view('doctor.index', compact('users', 'i'));
     }
 
     /**
@@ -28,7 +29,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        $panels = Panel::all();
+        return view('doctor.create', compact('panels'));
     }
 
     /**
@@ -39,7 +41,22 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create($request->all());
+
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        if($request->usertype == 1){
+            $user->assignRole('doctor');
+        }elseif($request->usertype == 2){
+            $user->assignRole('staff');
+        }elseif($request->usertype == 3){
+            $user->assignRole('patient');
+        }
+
+        return redirect()->route('doctor.index')
+            ->with('success', 'User created successfully!');
     }
 
     /**
@@ -94,6 +111,6 @@ class DoctorController extends Controller
         $user->delete();
 
         return redirect()->route('doctor.index')
-        ->with('success', 'User deleted successfully');
+            ->with('success', 'User deleted successfully');
     }
 }
