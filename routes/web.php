@@ -6,6 +6,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PatientController;
+use App\Models\Panel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('queue/{user}/finish', [AppointmentController::class, 'finishQueue'])->name('finishes');
         Route::get('show/{user}', [AppointmentController::class, 'show'])->name('show');
         Route::post('finish', [AppointmentController::class, 'saveFinish'])->name('finish');
+        Route::get('destroy/{user}', [AppointmentController::class, 'destroy'])->name('destroy');
     });
     
     Route::prefix('patient')->name('patient.')->group(function () {
@@ -43,14 +45,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('show/{user}', [PatientController::class, 'show'])->name('show');
         Route::get('edit/{user}', [PatientController::class, 'edit'])->name('edit');
         Route::put('update/{user}', [PatientController::class, 'update'])->name('update');
+        Route::get('destroy/{user}', [PatientController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('panel')->name('panel.')->group(function () {
         Route::get('', [PanelController::class, 'index'])->name('index');
         Route::post('store', [PanelController::class, 'store'])->name('store');
         Route::get('records', [PanelController::class, 'records'])->name('records');
-        
-
+        Route::get('edit/{panel}', [PanelController::class, 'edit'])->name('edit');
+        Route::put('update/{panel}', [PanelController::class, 'update'])->name('update');
+        Route::get('show/{panel}', [PanelController::class, 'show'])->name('show');
+        Route::get('destroy/{panel}', [PanelController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('doctor')->name('doctor.')->group(function () {

@@ -28,4 +28,32 @@ class PanelController extends Controller
 
         return view('panels.records', compact('panels'));
     }
+
+    public function edit(Panel $panel)
+    {
+
+        return view('panel.edit', compact('panel'));
+    }
+
+    public function update(Request $request, Panel $panel)
+    {
+        $panel->update($request->all());
+
+        return redirect()->route('panel.records')
+            ->with('success', 'Panel updated successfully!');
+    }
+
+    public function show(Panel $panel)
+    {
+
+        return view('panel.show', compact('panel'));
+    }
+
+    public function destroy(Panel $panel)
+    {
+        $panel->delete();
+
+        return redirect()->route('panel.records')
+            ->with('success', 'Panel deleted successfully');
+    }
 }

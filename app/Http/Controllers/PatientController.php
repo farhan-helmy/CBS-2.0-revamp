@@ -57,4 +57,12 @@ class PatientController extends Controller
         return redirect()->route('patient.records')
             ->with('success', 'Patient updated successfully!');
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('patient.records')
+            ->with('success', 'User deleted successfully');
+    }
 }

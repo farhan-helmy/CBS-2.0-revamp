@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-7 align-self-center">
                 <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                    Add Panel
+                   Edit Patient
                 </h4>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -47,24 +47,24 @@
             <div class="mx-auto col-sm-12 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title">Add Panel Here</h1>
-                        <form class="mt-3 form-horizontal" method="POST" action="{{ route('panel.store') }}">
-                            @method('POST')
+                        <h1 class="card-title">Update Here</h1>
+                        <form class="mt-3 form-horizontal" method="POST" action="{{ route('panel.update', ['panel' => $panel->id]) }}">
+                            @method('PUT')
                             @csrf
                             <div class="form-body">
                                 <div class="row">
                                     <label class="col-md-2 text-right">Panel Company Name</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="company_name" placeholder="">
+                                            <input type="text" class="form-control" id="name" name="company_name" value="{{$panel->company_name}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Panel Company Details</label>
+                                    <label class="col-md-2 text-right">Panel Company Detail</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="company_details" placeholder="">
+                                            <input type="text" class="form-control" id="name" name="company_details" value="{{$panel->company_details}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>

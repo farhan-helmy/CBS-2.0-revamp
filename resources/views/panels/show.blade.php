@@ -5,11 +5,11 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-7 align-self-center">
-                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Patient Show</h3>
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Panel Show</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html">Patient Show</a>
+                            <li class="breadcrumb-item"><a href="index.html">Panel Show</a>
                             </li>
                         </ol>
                     </nav>
@@ -26,16 +26,10 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title text-white">Details</h3>
-                        <p class="card-text">Name: {{$user->name}}</p>
-                        <p class="card-text">NRIC: {{$user->nric}}</p>
-                        <p class="card-text">Email: {{$user->email}}</p>
-                        <p class="card-text">Gender: {{$user->gender}}</p>
-                        <p class="card-text">Phone number: {{$user->phone_no}}</p>
-                        <p class="card-text">Next of kin: {{$user->next_of_kin}}</p>
-                        <h3 class="card-title text-white">Panel</h3>
-                        <p class="card-text">Panel name: {{$user->panel->company_name}}</p>
-                        <a href="{{route('patient.records')}}" class="btn btn-primary">Back</a>
-                        <a href="{{route('patient.destroy', ['user' => $user->id])}}" class="btn btn-primary">Delete</a>
+                        <p class="card-text">Panel Company Name: {{$panel->company_name}}</p>
+                        <p class="card-text">Panel Company Details: {{$panel->company_details}}</p>
+                        <a href="{{route('panel.index')}}" class="btn btn-primary">Back</a>
+                        <a href="{{route('panel.destroy', ['panel' => $panel->id])}}" class="btn btn-primary">Delete</a>
                     </div>
                 </div>
             </div>  

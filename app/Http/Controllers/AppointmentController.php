@@ -12,7 +12,7 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        $users = User::where('status', '=', NULL)->get();
+        $users = User::role('patient')->get();
 
         //dd($users);
         return view('appointment.index', compact('users'));
@@ -40,8 +40,9 @@ class AppointmentController extends Controller
         DB::table('appointments')->insert([
             'user_id' => $user->id
         ]);
+        $users = User::where('status', 'queue')->get();
 
-        return view('appointment.index', compact('users'));
+        return view('appointment.queue', compact('users'));
     }
 
     public function finishQueue(User $user)
@@ -77,4 +78,13 @@ class AppointmentController extends Controller
         //dd($user->appointment());
         return view('appointment.show', compact('user'));
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('appointment.index')
+            ->with('success', 'User deleted successfully');
+    }
+    
 }
