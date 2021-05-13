@@ -14,8 +14,8 @@ class AppointmentController extends Controller
     {
         $users = User::role('patient')->get();
 
-        //dd($users);
-        return view('appointment.index', compact('users'));
+        $i = 1;
+        return view('appointment.index', compact('users','i'));
     }
 
     public function queue()
@@ -79,12 +79,14 @@ class AppointmentController extends Controller
         return view('appointment.show', compact('user'));
     }
 
-    public function destroy(User $user)
+    public function unset(User $user)
     {
-        $user->delete();
+        $user->status = NULL;
+        
+        $user->save();
 
-        return redirect()->route('appointment.index')
-            ->with('success', 'User deleted successfully');
+        return redirect()->route('appointment.set')
+            ->with('success', 'Appointment unset successfully');
     }
     
 }
