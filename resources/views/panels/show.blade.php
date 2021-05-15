@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="card text-white bg-dark">
                     <div class="card-header">
-                        <h4 class="mb-0 text-white">Patient #{{$user->id}}</h4>
+                        <h4 class="mb-0 text-white">Panel #{{$panel->id}}</h4>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title text-white">Details</h3>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -10,7 +9,7 @@
         <div class="row">
             <div class="col-7 align-self-center">
                 <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                    Finish Treatment
+                    Edit Appointment
                 </h4>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -48,31 +47,16 @@
             <div class="mx-auto col-sm-12 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title">Finish Treatment</h1>
-                        <form class="mt-3 form-horizontal" method="POST" action="/appointment/finish">
+                        <h1 class="card-title">Update Here</h1>
+                        <form class="mt-3 form-horizontal" method="POST" action="{{ route('appointment.update', ['appointment' => $appointment->id]) }}">
+                            @method('PUT')
                             @csrf
                             <div class="form-body">
-                                <div class="row">
-                                    <label class="col-md-2 text-right">Name</label>
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="{{$user->name}}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-md-2 text-right">Patient ID</label>
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="user_id" placeholder="{{ $user->id }}" value="{{ $user->id }}">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <label class="col-md-2 text-right">Complaint</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <textarea type="number" class="form-control" name="complaints" rows="3" placeholder=""></textarea>
+                                            <input type="text" class="form-control" id="name" name="complaints" value="{{$appointment->complaints}}">
                                         </div>
                                     </div>
                                 </div>
@@ -80,31 +64,32 @@
                                     <label class="col-md-2 text-right">Treatment</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <textarea type="number" class="form-control" name="treatment" rows="3" placeholder=""></textarea>
+                                            <input type="text" class="form-control" name="treatment" value="{{$appointment->treatment}}" >
                                         </div>
                                     </div>
                                 </div>
+                
                                 <div class="row">
                                     <label class="col-md-2 text-right">Medication</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="medication" placeholder="Ubat-ubatan">
+                                            <input type="text" class="form-control" name="medication" value="{{$appointment->medication}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Fee</label>
+                                    <label class="col-md-2 text-right">Treatment Fee</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="treatment_fee" placeholder="RM">
+                                            <input type="text" class="form-control" name="treatment_fee" value="{{$appointment->treatment_fee}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Resit_No</label>
+                                    <label class="col-md-2 text-right">Resit_no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="resit_no" placeholder="">
+                                            <input type="text" class="form-control" name="resit_no" value="{{$appointment->resit_no}}">
                                         </div>
                                     </div>
                                 </div>
@@ -133,5 +118,4 @@
     <!-- End footer -->
     <!-- ============================================================== -->
 </div>
-
 @endsection

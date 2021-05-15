@@ -69,7 +69,7 @@
                                         <td>{{ $panel->company_name }}</td>
                                         <td>{{ $panel->company_details }}</td>
                                         <td>{{ $panel->created_at }}</td>
-                                        <td><a href="{{route('panel.edit', ['panel' => $panel->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('panel.show', ['panel' => $user->id])}}" class="btn btn-rounded btn-danger">VIEW</a></td>
+                                        <td><a href="{{route('panel.edit', ['panel' => $panel->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('panel.show', ['panel' => $panel->id])}}" class="btn btn-rounded btn-danger">VIEW</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

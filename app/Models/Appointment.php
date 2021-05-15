@@ -21,8 +21,8 @@ class Appointment extends Model
         'queue_no'
     ];
 
-    public function patient()
+    public function patients()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'appointment_users');
     }
 }

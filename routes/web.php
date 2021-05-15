@@ -33,9 +33,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('queue', [AppointmentController::class, 'queue'])->name('queue');
         Route::get('records', [AppointmentController::class, 'records'])->name('records');
         Route::get('queue/{user}/finish', [AppointmentController::class, 'finishQueue'])->name('finishes');
-        Route::get('show/{user}', [AppointmentController::class, 'show'])->name('show');
+        Route::get('show/{appointment}', [AppointmentController::class, 'show'])->name('show');
         Route::post('finish', [AppointmentController::class, 'saveFinish'])->name('finish');
         Route::get('unset/{user}', [AppointmentController::class, 'unset'])->name('unset');
+        Route::get('delete/{user}/{appointment}', [AppointmentController::class, 'delete'])->name('delete');
+        Route::get('edit/{appointment}', [AppointmentController::class, 'edit'])->name('edit');
+        Route::put('update/{appointment}', [AppointmentController::class, 'update'])->name('update');
     });
     
     Route::prefix('patient')->name('patient.')->group(function () {

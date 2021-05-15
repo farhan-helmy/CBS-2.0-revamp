@@ -32,7 +32,7 @@ class PanelController extends Controller
     public function edit(Panel $panel)
     {
 
-        return view('panel.edit', compact('panel'));
+        return view('panels.edit', compact('panel'));
     }
 
     public function update(Request $request, Panel $panel)
@@ -46,7 +46,7 @@ class PanelController extends Controller
     public function show(Panel $panel)
     {
 
-        return view('panel.show', compact('panel'));
+        return view('panels.show', compact('panel'));
     }
 
     public function destroy(Panel $panel)

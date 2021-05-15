@@ -45,7 +45,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
+    /**p
      * The attributes that should be cast to native types.
      *
      * @var array
@@ -56,7 +56,7 @@ class User extends Authenticatable
 
     public function appointment()
     {
-        return $this->belongsTo(Appointment::class);
+        return $this->belongsToMany(Appointment::class, 'appointment_users');
     }
 
     public function panel()

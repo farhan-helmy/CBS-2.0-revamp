@@ -40,22 +40,22 @@
                                 <thead>
                                     <tr>
                                         <th>Appointment ID</th>
-                                        <th>Patient Name</th>
-                                        <th>NRIC</th>
-                                        <th>Patient ID</th>
-                                        <th>Panel ID</th>
+
+                                        <th>Date Time</th>
+                                        <th>Name</th>
                                         <th>ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($users as $user)
+                                    @foreach($appointments as $appointment)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->nric }}</td>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->panel_id }}</td>
-                                        <td><button class="btn btn-rounded btn-success">EDIT</button> <button class="btn btn-rounded btn-danger">DELETE</button> <a href="{{route('appointment.show', ['user' => $user->id])}}"><button class="btn btn-rounded btn-danger">VIEW</button></a></td>
+                                        <td>{{ $appointment->id }}</td>
+                                        <td>{{ $appointment->date_time }}</td>
+                                        @foreach($appointment->patients as $patient)
+                                        <td>{{ $patient->name }}</td>
+                                        @endforeach
+                                        <td><a href="{{route('appointment.edit', ['appointment' => $appointment->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('appointment.show', ['appointment' => $appointment->id])}}"><button class="btn btn-rounded btn-danger">VIEW</button></a></td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>

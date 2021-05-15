@@ -27,8 +27,8 @@ class AppointmentController extends Controller
 
     public function records()
     {
-        $users = User::where('status', 'done')->get();
-        return view('appointment.records', compact('users'));
+        $appointments = Appointment::has('patients')->get();
+        return view('appointment.records', compact('appointments'));
     }
 
     public function set(User $user)
@@ -36,10 +36,6 @@ class AppointmentController extends Controller
         $user->status = 'queue';
         $time_now = Carbon::now();
         $user->save();
-
-        DB::table('appointments')->insert([
-            'user_id' => $user->id
-        ]);
         $users = User::where('status', 'queue')->get();
 
         return view('appointment.queue', compact('users'));
@@ -53,30 +49,26 @@ class AppointmentController extends Controller
     public function saveFinish(Request $request)
     {
         $time_now = Carbon::now();
-        $appointment = Appointment::where('user_id', '=', $request->user_id)->first();
-
-        $appointment->complaints = $request->complaint;
-        $appointment->medication = $request->medication;
-        $appointment->treatment_fee = $request->treatment_fee;
-        $appointment->resit_no = $request->resit_no;
-        $appointment->treatment = $request->treatment;
+        $appointment = Appointment::create($request->all());
         $appointment->date_time = $time_now;
         $appointment->save();
 
-        $user = User::where('id', '=', $request->user_id)->first();
+        $user = User::find($request->user_id);
+
         $user->status = 'done';
-        $user->appointment_id = $appointment->id;
         $user->save();
 
+        $user->appointment()->attach($appointment->id);
         //dd($appointment);
-        return redirect()->route('dashboard.index')
+        return redirect()->route('appointment.records')
             ->with('success', 'Patients records saved successfully.');
     }
 
-    public function show(User $user)
+    public function show(Appointment $appointment)
     {
         //dd($user->appointment());
-        return view('appointment.show', compact('user'));
+        //dd($appointment->patients());
+        return view('appointment.show', compact('appointment'));
     }
 
     public function unset(User $user)
@@ -88,5 +80,27 @@ class AppointmentController extends Controller
         return redirect()->route('appointment.set')
             ->with('success', 'Appointment unset successfully');
     }
-    
+
+    public function delete(User $user, Appointment $appointment)
+    {
+        $user->appointment()->detach($appointment->id);
+        //$appointment->patients()->detach($user->id);
+        return redirect()->route('appointment.records')
+            ->with('success', 'Appointment deleted successfully');
+    }
+
+    public function edit(Appointment $appointment)
+    {
+        return view('appointment.edit', compact('appointment'));
+    }
+
+    public function update(Request $request, Appointment $appointment)
+    {
+        $appointment->update($request->all());
+
+        return redirect()->route('appointment.records')
+            ->with('success', 'Appointment edited successfully');
+    }
+
+   
 }

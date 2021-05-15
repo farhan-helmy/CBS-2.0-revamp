@@ -16,7 +16,6 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('panel_id')->nullable()->unsigned();
-           
             $table->string('name');
             $table->bigInteger('nric')->unique();
             $table->string('email')->unique()->nullable();
@@ -34,7 +33,7 @@ class CreateUsersTable extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('panel_id')->nullable()->references('id')->on('panel_companies');
+            $table->foreign('panel_id')->nullable()->references('id')->on('panel_companies')->onDelete('cascade');
            
         });
     }

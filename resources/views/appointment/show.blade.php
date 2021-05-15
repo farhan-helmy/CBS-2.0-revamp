@@ -22,17 +22,18 @@
             <div class="col-md-6">
                 <div class="card text-white bg-dark">
                     <div class="card-header">
-                        <h4 class="mb-0 text-white">Patient #{{$user->id}}</h4>
+                        <h4 class="mb-0 text-white">ID #{{$appointment->patients[0]->id}}</h4>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title text-white">Treatments</h3>
-                        <p class="card-text">Date and time: {{$user->appointment->date_time}}</p>
-                        <p class="card-text">Complaints: {{$user->appointment->complaints}}</p>
-                        <p class="card-text">Treatment: {{$user->appointment->treatment}}</p>
-                        <p class="card-text">Medication: {{$user->appointment->medication}}</p>
-                        <p class="card-text">Treatment Fee: {{$user->appointment->treatment_fee}}</p>
-                        <p class="card-text">Resit no: {{$user->appointment->resit_no}}</p>
+                        <p class="card-text">Date and time: {{$appointment->date_time}}</p>
+                        <p class="card-text">Complaints: {{$appointment->complaints}}</p>
+                        <p class="card-text">Treatment: {{$appointment->treatment}}</p>
+                        <p class="card-text">Medication: {{$appointment->medication}}</p>
+                        <p class="card-text">Treatment Fee: {{$appointment->treatment_fee}}</p>
+                        <p class="card-text">Resit no: {{$appointment->resit_no}}</p>
                         <a href="{{route('appointment.records')}}" class="btn btn-primary">Back</a>
+                        <a href="{{route('appointment.delete', ['user' => $appointment->patients[0]->id, 'appointment' => $appointment->id ])}}" class="btn btn-primary">Delete</a>
                     </div>
                 </div>
             </div>  

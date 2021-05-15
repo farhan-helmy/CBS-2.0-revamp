@@ -15,7 +15,6 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->dateTime('date_time')->nullable();
             $table->string('complaints')->nullable();
             $table->string('treatment')->nullable();
@@ -25,9 +24,6 @@ class CreateAppointmentsTable extends Migration
             $table->string('queue_no')->nullable();
         });
 
-        Schema::table('appointments', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-        });
     }
 
     /**

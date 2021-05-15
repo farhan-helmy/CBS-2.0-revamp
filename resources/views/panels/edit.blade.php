@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-7 align-self-center">
                 <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                   Edit Patient
+                   Edit Panel
                 </h4>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
