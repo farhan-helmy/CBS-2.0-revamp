@@ -10,7 +10,8 @@ class UserController extends Controller
     public function index()
     {
        $usercount = User::role('patient')->count();
-
-       return view('dashboard.index', compact('usercount'));
+       $queue = User::where('status', '=', 'queue')->count();
+       
+       return view('dashboard.index', compact('usercount','queue'));
     }
 }
