@@ -42,21 +42,9 @@
                                 <h2 class="text-dark mb-1 font-weight-medium">{{$usercount}}</h2>
                                 
                             </div>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Patients</h6>
+                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Patients</h6>
                         </div>
                       
-                    </div>
-                </div>
-            </div>
-            <div class="card border-right">
-                <div class="card-body">
-                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                        <div>
-                            <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup class="set-doller">RM</sup>500</h2>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Today's earnings
-                            </h6>
-                        </div>
-                       
                     </div>
                 </div>
             </div>

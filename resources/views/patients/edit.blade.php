@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-7 align-self-center">
                 <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                    Add Patient
+                    Edit Patient
                 </h4>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -92,7 +92,7 @@
                                     <label class="col-md-2 text-right">Address</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <textarea type="text" class="form-control" rows="3" value="{{$user->address}}" name="address" placeholder=""></textarea>
+                                            <textarea type="text" class="form-control" rows="3" value="{{$user->address}}" name="address" placeholder="{{$user->address}}"></textarea>
                                         </div>
                                     </div>
                                 </div>
