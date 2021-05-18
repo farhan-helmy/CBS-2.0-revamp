@@ -99,7 +99,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin" placeholder="xxxxxxxxxx">
+                                            <input type="number" class="form-control" name="next_of_kin_phone_no" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                     <label class="col-md-2 text-right">Next of kin details</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="details" placeholder="">
+                                            <input type="text" class="form-control" name="next_of_kin" placeholder="">
                                         </div>
                                     </div>
                                 </div>
