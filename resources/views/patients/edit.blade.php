@@ -84,7 +84,7 @@
                                     <label class="col-md-2 text-right">Phone no.</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="phone_no" value="{{$user->phone_no}}" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="phone_no" value="0{{$user->phone_no}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                                     <label class="col-md-2 text-right">Address</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <textarea type="text" class="form-control" rows="3" value="{{$user->address}}" name="address" placeholder="{{$user->address}}"></textarea>
+                                            <textarea type="text" class="form-control" rows="3" value="" name="address" placeholder="">{{$user->address}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
+                                            <input type="number" class="form-control" name="next_of_kin_phone_no" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                     <label class="col-md-2 text-right">Next of kin details</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" name="details" value="{{$user->next_of_kin}}" placeholder="">
+                                            <input type="text" class="form-control" id="name" name="next_of_kin" value="{{$user->next_of_kin}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>

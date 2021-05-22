@@ -64,7 +64,7 @@
                                     <label class="col-md-2 text-right">NRIC</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="nric" value="{{$user->nric}}" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="nric" value="{{$user->nric}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="next_of_kin" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -120,19 +120,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <label class="col-md-2 text-right">Panel</label>
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="panel_id">
-                                                <option selected value="{{$user->panel->id}}">{{$user->panel->company_name}}</option>
-                                                @foreach($panels as $panel)
-                                                <option value="{{$panel->id}}">{{$panel->company_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">

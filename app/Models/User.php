@@ -32,7 +32,8 @@ class User extends Authenticatable
         'status',
         'appointment_id',
         'password',
-        'panel_id'
+        'panel_id',
+        'worker_no'
     ];
 
     /**

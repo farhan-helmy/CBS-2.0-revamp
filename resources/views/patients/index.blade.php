@@ -63,7 +63,7 @@
                                     <label class="col-md-2 text-right">NRIC</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="nric" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="nric" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="next_of_kin_phone_no" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="next_of_kin_phone_no" placeholder="xxxxxxxxxx">
                                         </div>
                                     </div>
                                 </div>
@@ -120,6 +120,14 @@
                                                 <option value="{{$panel->id}}">{{$panel->company_name}}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2 text-right">Worker Number</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="worker_no" placeholder="">
                                         </div>
                                     </div>
                                 </div>

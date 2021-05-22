@@ -69,6 +69,22 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label class="col-md-2 text-right">Max Coverage</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="max_coverage" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2 text-right">Payback Period</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="payback_period" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-rounded btn-primary">SUBMIT</button>

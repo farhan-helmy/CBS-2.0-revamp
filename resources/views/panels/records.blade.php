@@ -58,6 +58,8 @@
                                         <th>Panel ID</th>
                                         <th>Panel Company Name</th>
                                         <th>Panel Company Details</th>
+                                        <th>Max Coverage</th>
+                                        <th>Payback Period</th>
                                         <th>Registered At</th>
                                         <th>Action</th>
                                     </tr>
@@ -68,6 +70,8 @@
                                         <td>{{ $panel->id }}</td>
                                         <td>{{ $panel->company_name }}</td>
                                         <td>{{ $panel->company_details }}</td>
+                                        <td>{{ $panel->max_coverage }}</td>
+                                        <td>{{ $panel->payback_period }}</td>
                                         <td>{{ $panel->created_at }}</td>
                                         <td><a href="{{route('panel.edit', ['panel' => $panel->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('panel.show', ['panel' => $panel->id])}}" class="btn btn-rounded btn-danger">VIEW</a></td>
                                     </tr>

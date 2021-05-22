@@ -8,7 +8,7 @@
             <!-- ============================================================== -->
             <div class="navbar-brand">
                 <!-- Logo icon -->
-                <a href="index.html">
+                <a href="{{route('dashboard.index')}}">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
 
@@ -19,7 +19,7 @@
                     <!-- Logo text -->
                     <span class="logo-text">
                         <!-- dark Logo text -->
-
+                        <img src="{{asset('assets/images/logo.jpg')}}" alt="" class="dark-logo" style="width:200px;height:100px;">
                         <!-- Light Logo text -->
 
                     </span>
@@ -43,27 +43,27 @@
             <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                 <!-- Notification -->
                 <li class="nav-item dropdown">
-                   
+
                 </li>
                 <!-- End Notification -->
                 <!-- ============================================================== -->
                 <!-- create new -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                  
+
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav float-right">
-              
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       
-                        <span class="ml-2 d-none d-lg-inline-block"><span>Hello</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
+
+                        <span class="ml-2 d-none d-lg-inline-block"><span>Hello {{Auth::user()->name}}!</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-    
+
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="btn btn-rounded">
@@ -71,8 +71,8 @@
                                     Logout</a>
                             </button>
                         </form>
-                       
-        
+
+
                     </div>
                 </li>
                 <!-- ============================================================== -->
