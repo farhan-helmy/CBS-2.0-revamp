@@ -113,6 +113,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label class="col-md-2 text-right">Worker Number</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="worker_no" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label class="col-md-2 text-right">Panel</label>
                                     <div class="col-md-8">
                                         <div class="form-group">

@@ -100,7 +100,7 @@
                                     <label class="col-md-2 text-right">Next of kin phone.no</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="next_of_kin_phone_no" value="{{$user->next_of_kin_phone_no}}" placeholder="xxxxxxxxxx">
+                                            <input type="text" class="form-control" name="next_of_kin_phone_no" value="{{$user->next_of_kin_phone_no}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>
