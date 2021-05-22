@@ -43,7 +43,7 @@
                                         <th>Name</th>
                                         <th>Date Time</th>
                                         <th>Complaint</th>
-                                        <th>Fee</th>
+                                        <th>Fee (RM)</th>
                                         <th>Resit no</th>
                                         <th>ACTION</th>
                                     </tr>
@@ -56,7 +56,7 @@
                                         <td>{{ $patient->name }}</td>
                                         @endforeach
                                         <td>{{ $appointment->date_time }}</td>
-                                        <td>{{ $appointment->complaint }}</td>
+                                        <td>{{ $appointment->complaints }}</td>
                                         <td>{{ $appointment->treatment_fee }}</td>
                                         <td>{{ $appointment->resit_no }}</td>
                                         <td><a href="{{route('appointment.edit', ['appointment' => $appointment->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('appointment.show', ['appointment' => $appointment->id])}}"><button class="btn btn-rounded btn-danger">VIEW</button></a></td>

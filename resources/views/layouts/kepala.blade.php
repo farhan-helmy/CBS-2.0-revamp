@@ -42,14 +42,15 @@
             <!-- ============================================================== -->
             <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                 <!-- Notification -->
-                <li class="nav-item dropdown">
-
+               
+                <li class="nav-item text-center px-5">
+                    <h1 class="text-bold">PATIENT MANAGEMENT SYSTEM</h1>
                 </li>
                 <!-- End Notification -->
                 <!-- ============================================================== -->
                 <!-- create new -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown">
+
 
             </ul>
             <!-- ============================================================== -->

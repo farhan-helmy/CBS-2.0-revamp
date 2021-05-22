@@ -20,7 +20,7 @@ class AppointmentController extends Controller
 
     public function queue()
     {
-        $users = User::where('status', 'queue')->get();
+        $users = User::where('status', 'queue')->orderBy('updated_at', 'desc')->get();
         $i = 1;
 
         return view('appointment.queue', compact('users', 'i'));
@@ -37,7 +37,7 @@ class AppointmentController extends Controller
         $user->status = 'queue';
         $time_now = Carbon::now();
         $user->save();
-        $users = User::where('status', 'queue')->orderBy('updated_at', 'asc')->get();
+        $users = User::where('status', 'queue')->orderBy('updated_at', 'desc')->get();
         $i = 1;
 
         return view('appointment.queue', compact('users','i'));

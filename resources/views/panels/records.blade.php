@@ -58,8 +58,8 @@
                                         <th>Panel ID</th>
                                         <th>Panel Company Name</th>
                                         <th>Panel Company Details</th>
-                                        <th>Max Coverage</th>
-                                        <th>Payback Period</th>
+                                        <th>Max Coverage (RM)</th>
+                                        <th>Payback Period (days)</th>
                                         <th>Registered At</th>
                                         <th>Action</th>
                                     </tr>

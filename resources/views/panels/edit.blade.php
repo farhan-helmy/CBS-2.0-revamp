@@ -53,7 +53,7 @@
                             @csrf
                             <div class="form-body">
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Panel Company Name</label>
+                                    <label class="col-md-3 text-right">Panel Company Name</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" name="company_name" value="{{$panel->company_name}}" placeholder="">
@@ -61,10 +61,26 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label class="col-md-2 text-right">Panel Company Detail</label>
+                                    <label class="col-md-3 text-right">Panel Company Detail</label>
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" name="company_details" value="{{$panel->company_details}}" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-3 text-right">Max Coverage(RM)</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="max_coverage"  value="{{$panel->max_coverage}}" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-3 text-right">Payback Period(days)</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="payback_period"  value="{{$panel->payback_period}}" placeholder="">
                                         </div>
                                     </div>
                                 </div>

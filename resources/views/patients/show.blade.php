@@ -33,6 +33,7 @@
                         <p class="card-text">Address: {{$user->address}}</p>
                         <p class="card-text">Next of kin phone no: {{$user->next_of_kin_phone_no}}</p>
                         <p class="card-text">Next of kin: {{$user->next_of_kin}}</p>
+                        <p class="card-text">Worker number: {{$user->worker_no}}</p>
                         <h3 class="card-title text-white">Panel</h3>
                         <p class="card-text">Panel name: {{$user->panel->company_name}}</p>
                         <a href="{{route('patient.records')}}" class="btn btn-primary">Back</a>

@@ -44,7 +44,7 @@
                                         <th>Name</th>
                                         <th>NRIC</th>
                                         <th>Patient ID</th>
-                                        <th>Panel ID</th>
+                                        
                                         <th>Register Date</th>
                                         <th>ACTION</th>
                                     </tr>
@@ -56,7 +56,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->nric }}</td>
                                         <td>{{ $user->id }}</td>
-                                        <td>{{ $user->panel_id }}</td>
+                                       
                                         <td>{{ $user->created_at }}</td>
                                         <td><a href="{{route('doctor.edit', ['user' => $user->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('doctor.show', ['user' => $user->id])}}" class="btn btn-rounded btn-danger">Show</a></td>
                                     </tr>

@@ -28,6 +28,8 @@
                         <h3 class="card-title text-white">Details</h3>
                         <p class="card-text">Panel Company Name: {{$panel->company_name}}</p>
                         <p class="card-text">Panel Company Details: {{$panel->company_details}}</p>
+                        <p class="card-text">Max Coverage (RM): {{$panel->max_coverage}}</p>
+                        <p class="card-text">Payback Period (days): {{$panel->payback_period}}</p>
                         <a href="{{route('panel.index')}}" class="btn btn-primary">Back</a>
                         <a href="{{route('panel.destroy', ['panel' => $panel->id])}}" class="btn btn-primary">Delete</a>
                     </div>

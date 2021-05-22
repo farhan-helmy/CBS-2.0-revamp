@@ -31,8 +31,8 @@
                         <p class="card-text">Gender: {{$user->gender}}</p>
                         <p class="card-text">Phone number: {{$user->phone_no}}</p>
                         <p class="card-text">Next of kin: {{$user->next_of_kin}}</p>
+                        <p class="card-text">Worker number: {{$user->worker_no}}</p>
                         <h3 class="card-title text-white">Panel</h3>
-                        <p class="card-text">Panel name: {{$user->panel->company_name}}</p>
                         <a href="{{route('doctor.index')}}" class="btn btn-primary">Back</a>
                         <a href="{{route('doctor.destroy', ['user' => $user->id])}}" class="btn btn-primary">Delete</a>
                     </div>
