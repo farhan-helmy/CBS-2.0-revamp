@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                <a href="{{route('doctor.create')}}" class="btn btn-rounded btn-success">Add new staff</a>
+                    <a href="{{route('doctor.create')}}" class="btn btn-rounded btn-success">Add new staff</a>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="zero_config" class="table table-striped table-bordered no-wrap">
@@ -43,8 +43,6 @@
                                         <th>Number</th>
                                         <th>Name</th>
                                         <th>NRIC</th>
-                                        <th>Patient ID</th>
-                                        
                                         <th>Register Date</th>
                                         <th>ACTION</th>
                                     </tr>
@@ -55,8 +53,6 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->nric }}</td>
-                                        <td>{{ $user->id }}</td>
-                                       
                                         <td>{{ $user->created_at }}</td>
                                         <td><a href="{{route('doctor.edit', ['user' => $user->id])}}" class="btn btn-rounded btn-success">EDIT</a> <a href="{{route('doctor.show', ['user' => $user->id])}}" class="btn btn-rounded btn-danger">Show</a></td>
                                     </tr>

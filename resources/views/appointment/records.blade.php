@@ -41,6 +41,9 @@
                                     <tr>
                                         <th>Appointment ID</th>
                                         <th>Name</th>
+                                        <th>Patient ID</th>
+                                        <th>Panel ID</th>
+                                        <th>Panel</th>
                                         <th>Date Time</th>
                                         <th>Complaint</th>
                                         <th>Fee (RM)</th>
@@ -54,6 +57,9 @@
                                         <td>{{ $appointment->id }}</td>
                                         @foreach($appointment->patients as $patient)
                                         <td>{{ $patient->name }}</td>
+                                        <td>{{ $patient->id }}</td>
+                                        <td>{{ $patient->panel->id }}</td>
+                                        <td>{{ $patient->panel->company_name }}</td>
                                         @endforeach
                                         <td>{{ $appointment->date_time }}</td>
                                         <td>{{ $appointment->complaints }}</td>
